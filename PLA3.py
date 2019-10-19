@@ -1,7 +1,7 @@
 __author__="Mohammad Yusuf Jamal Aziz Azmi"
 
 # LANGUAGE USED :- Python 3
-#The main function(I know python dosent have one, but kinda) starts at line 321.
+#The main function(I know python dosent have one, but kinda) starts at line 327.
 #Please do note : Just that life, not everything is perfect, hence this program might give shocking outputs in some cases. 
 # The table formatting isn't perfect 
 
@@ -383,6 +383,8 @@ for i in range(len(common_list_of_EPI_letters)):
 print("") #for new line
 
 #printing the header
+
+# Getting the required letters for displaying EPI
 s=''
 c='A'
 for i in range(n_var):
