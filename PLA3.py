@@ -2,7 +2,7 @@ __author__="Mohammad Yusuf Jamal Aziz Azmi"
 
 # LANGUAGE USED :- Python 3
 #The main function(I know python dosent have one, but kinda) starts at line 327.
-#Please do note : Just that life, not everything is perfect, hence this program might give shocking outputs in some cases. 
+#Please do note : Just like life, nothing is perfect, hence this program might give some shocking outputs in some cases. 
 # The table formatting isn't perfect 
 
 # INSTRUCTIONS ON HOW TO USE:-
