@@ -12,6 +12,7 @@ __author__="Mohammad Yusuf Jamal Aziz Azmi"
 # 3) Now the user will be prompted to enter the cell numbers for each function, WARNING:- STICK TO THE RANGE TOLD TO YOU WHILE ENTERING THE CELL NUMBERS.
 # 4) And VOILA!! You have your PLA table/chart, ENJOY!
 
+
 import itertools
 
 #compare two binary strings, check where there is one difference
@@ -322,7 +323,17 @@ def essential(n_var):
                     essential_prime_implicants.append(unchecked[i])
     return essential_prime_implicants
     
-
+def print_table(higher):
+    print("|"," "*(len(max(common_list_of_EPI_letters))-2)," "*int((higher/2) -1), "|", " "*(higher-1),"Products"," "*int((higher/2)-4),"|"," "*int((higher)), s, " "*(higher),"|", end=" "*higher)
+    for i in range(n_fun):
+        print(" F",i+1,end=" "*(int(higher/2)-1))
+    print(" "*(higher-n_fun),"|")
+    #printing the contents
+    for i in range(len(common_list_of_EPI)):
+        print("|", common_list_of_EPI_letters[i], "|", " "*n_var,"P", i, " "*n_var, "|", " "*n_var, common_list_of_EPI[i]," "*n_var,"|",end=" "*(n_var+1))
+        for j in range(n_fun):
+            print(display_list[i][j],end=" "*(n_var))
+        print("   |")
 
 #-------------------------------------------------------------    MAIN    -------------------------------------------------------------------------------------------------------------------#
 
@@ -383,8 +394,7 @@ for i in range(len(common_list_of_EPI_letters)):
 print("") #for new line
 
 #printing the header
-
-# Getting the required letters for displaying EPI
+#Getting the letters required to display common EPI
 s=''
 c='A'
 for i in range(n_var):
@@ -405,31 +415,10 @@ for i in range(n_var):
     elif boolean==True:
         c=chr(ord(c)+1)
 
-
 # if there are more functions than bits
 if n_fun>n_var:
-    print("|"," "*(len(max(common_list_of_EPI_letters))-2)," "*int((n_fun/2) -1), "|", " "*(n_fun-1),"Products"," "*int((n_fun/2)-4),"|"," "*int((n_fun)), s, " "*(n_fun),"|", end=" "*n_fun)
-    for i in range(n_fun):
-        print(" F",i+1,end=" "*(int(n_fun/2)-1))
-    print(" "*(n_fun-n_var),"|")
-
-    #printing the contents
-    for i in range(len(common_list_of_EPI)):
-        print("|", common_list_of_EPI_letters[i], "|", " "*n_fun,"P", i, " "*n_fun, "|", " "*n_fun, common_list_of_EPI[i]," "*n_fun,"|",end=" "*(n_fun+1))
-        for j in range(n_fun):
-            print(display_list[i][j],end=" "*(n_fun))
-        print("   |")
-
+    print_table(n_fun)
 # if there are more bits than the function
-if n_fun<n_var:
-    print("|"," "*(len(max(common_list_of_EPI_letters))-2)," "*int((n_var/2) -1), "|", " "*(n_var-1),"Products"," "*int((n_var/2)-4),"|"," "*int((n_var)), s, " "*(n_var),"|", end=" "*n_var)
-    for i in range(n_fun):
-        print(" F",i+1,end=" "*(int(n_var/2)-1))
-    print(" "*(n_var-n_fun),"|")
-
-    #printing the contents
-    for i in range(len(common_list_of_EPI)):
-        print("|", common_list_of_EPI_letters[i], "|", " "*n_var,"P", i, " "*n_var, "|", " "*n_var, common_list_of_EPI[i]," "*n_var,"|",end=" "*(n_var+1))
-        for j in range(n_fun):
-            print(display_list[i][j],end=" "*(n_var))
-        print("   |")
+elif n_fun<n_var:
+    print_table(n_var)
+   
